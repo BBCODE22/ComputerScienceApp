@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nclan.ac.spa.controllers.AIChatController">
+   <children>
+      <TextField fx:id="questionTextField" layoutX="77.0" layoutY="62.0" prefHeight="25.0" prefWidth="272.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" />
+      <TextArea fx:id="answerTextArea" layoutX="120.0" layoutY="101.0" prefHeight="270.0" prefWidth="431.0" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="49.0" AnchorPane.topAnchor="101.0" />
+      <Label layoutX="32.0" layoutY="66.0" text="Question" AnchorPane.leftAnchor="50.0" />
+      <Label layoutX="42.0" layoutY="227.0" text="Answer" AnchorPane.leftAnchor="50.0" />
+      <Button fx:id= "askQuestionButton" layoutX="511.0" layoutY="54.0" mnemonicParsing="false" onAction="#handleAskQuestion" text="Ask!" AnchorPane.rightAnchor="50.0" />
+   </children>
+</AnchorPane>

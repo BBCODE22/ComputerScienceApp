@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="596.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nclan.ac.spa.controllers.ConversionController">
+   <children>
+      <Button fx:id="convertButton" layoutX="284.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleConvert" text="Convert" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="240.0" />
+      <TextField fx:id="inputField" alignment="CENTER" layoutX="20.0" layoutY="180.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="180.0" />
+      <Label fx:id="resultLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="284.0" layoutY="287.0" text="Your result will show here!" textAlignment="CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="310.0" />
+      <HBox layoutX="161.0" layoutY="94.0" prefHeight="26.0" prefWidth="298.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="80.0">
+         <children>
+            <ComboBox fx:id="fromCombo" maxWidth="1.7976931348623157E308" prefWidth="120.0" HBox.hgrow="ALWAYS" />
+            <Label fx:id="toLabel" alignment="CENTER" contentDisplay="CENTER" minWidth="20.0" prefHeight="29.0" prefWidth="14.0" text="To" />
+            <ComboBox fx:id="toCombo" maxWidth="1.7976931348623157E308" prefWidth="120.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

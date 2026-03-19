@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="550.4" prefWidth="589.6" style="-fx-background-color: #2d3436;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+
+    <children>
+        <Label alignment="CENTER" style="-fx-text-fill: white; -fx-font-size: 18;" text="Please select an option from the left menu" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0">
+         <font>
+            <Font size="26.0" />
+         </font></Label>
+
+
+        <HBox alignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+        <ImageView fitHeight="200.0" fitWidth="200.0" preserveRatio="true">
+
+                <image>
+                        <Image url="@WelcomePic.png" />
+                </image>
+        </ImageView>
+        </HBox>
+
+
+
+    </children>
+</AnchorPane>

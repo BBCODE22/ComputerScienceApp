@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="rootAnchor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="596.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nclan.ac.spa.controllers.BitwiseLogicController">
+   <children>
+      <TabPane tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" tabMinWidth="262">
+        <tabs>
+          <Tab text="Bitwise Logic">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="185.0" layoutY="60.0" prefHeight="250.0" prefWidth="226.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="232.0" text="Choose either AND/OR/XOR " textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ComboBox fx:id="operationComboBox" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" VBox.vgrow="SOMETIMES">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="75.0" right="75.0" />
+                                 </VBox.margin>
+                                 <effect>
+                                    <Blend />
+                                 </effect>
+                              </ComboBox>
+                              <TextField fx:id="firstTextField">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="secondTextField" />
+                              <Button fx:id="comparitiveButton" mnemonicParsing="false" onAction="#handleBitwise" prefHeight="26.0" prefWidth="178.0" text="Go">
+                                 <VBox.margin>
+                                    <Insets left="70.0" right="70.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Label fx:id="comparitiveResultLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="231.0" text="Your answer Will Apear Here!" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab closable="false" text="Add &amp; Subtract">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="224.0" layoutY="60.0" prefHeight="106.0" prefWidth="147.0">
+                           <children>
+                              <ComboBox fx:id="numberBaseComboBox" prefHeight="26.0" prefWidth="147.0">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" />
+                                 </VBox.margin></ComboBox>
+                              <TextField fx:id="thirdTextField">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="fourthTextField">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                        <Label fx:id="addOrMinusLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="371.0" layoutY="114.0" prefHeight="18.0" prefWidth="52.0" textAlignment="CENTER">
+                           <font>
+                              <Font size="20.0" />
+                           </font></Label>
+                        <HBox layoutX="225.0" layoutY="178.0" prefHeight="0.0" prefWidth="146.0">
+                           <children>
+                              <ToggleButton fx:id="addSelectButton" mnemonicParsing="false" onAction="#handleToggle" prefHeight="26.0" prefWidth="45.0" text="+">
+                                 <HBox.margin>
+                                    <Insets left="20.0" top="10.0" />
+                                 </HBox.margin>
+                              </ToggleButton>
+                              <ToggleButton fx:id="minusSelectButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleMinusToggle" prefHeight="26.0" prefWidth="45.0" text="-" textAlignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets left="16.0" right="20.0" top="10.0" />
+                                 </HBox.margin>
+                              </ToggleButton>
+                           </children>
+                        </HBox>
+                        <Label fx:id="calculateResultLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="181.0" layoutY="276.0" prefHeight="18.0" prefWidth="233.0" text="Your answer will appear here!" textAlignment="CENTER" />
+                        <Button fx:id="calculateButton" layoutX="246.0" layoutY="230.0" mnemonicParsing="false" onAction="#handleMath" prefHeight="26.0" prefWidth="103.0" text="Calculate" />
+                        <Label layoutX="218.0" layoutY="35.0" text="Please Choose a Number Base" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
