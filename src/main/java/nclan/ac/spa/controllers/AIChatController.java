@@ -17,16 +17,17 @@ public class AIChatController {
 
 
 
-    private AIGemini ai;
+private AIGemini ai;
 
 /**
-* Sets up the AI instance and configures the answer area when the screen loads.
+* Sets up the AI instance and sets the answer area when the screen loads.
 */
+public void initialize()
 {
         ai = new AIGemini();
         answerTextArea.setWrapText(true);
         answerTextArea.setEditable(false);
-    }
+}
 /**
 * Takes the question from the text field, sends it to the AI, and displays the response.
 */
