@@ -6,6 +6,13 @@ public class Conversion {
 
 
 }
+
+/**
+ * Converts decimal to a binary using repeated division.
+ *
+ * @param decimal the decimal number to convert
+ * @return binary representation as a string
+ */
 public static String convertDecimalToBinary(int decimal)
 {
     ArrayList<Integer> remainder = new ArrayList<Integer>();
@@ -21,6 +28,12 @@ public static String convertDecimalToBinary(int decimal)
     }
     return result;
 }
+/**
+ * Converts decimal to a hex string.
+ *
+ * @param decimal the decimal number to convert
+ * @return hex representation as an uppercase string
+ */
 public static String convertDecimalToHex(int decimal)
 {
     String hexValues [] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F",};
@@ -35,6 +48,12 @@ public static String convertDecimalToHex(int decimal)
     }
     return hexAnswer = new StringBuilder(hexAnswer).reverse().toString();
 }
+/**
+ * Converts binary to decimal.
+ *
+ * @param rawBinary the binary string to convert
+ * @return decimal value as a string
+ */
 public static String convertBinaryToDecimal(String rawBinary)
 {
     int result = 0;
@@ -45,6 +64,12 @@ public static String convertBinaryToDecimal(String rawBinary)
 
     return Integer.toString(result);
 }
+/**
+ * Converts binary to hex.
+ *
+ * @param rawBinary the binary string to convert
+ * @return hex representation as an uppercase string
+ */
 public static String convertBinaryToHex(String rawBinary)
 {
 
@@ -78,6 +103,12 @@ public static String convertBinaryToHex(String rawBinary)
     cleanHex =cleanHex.toUpperCase();
     return cleanHex;
 }
+/**
+ * Converts hex to decimal.
+ *
+ * @param hexNumber the hex string to convert
+ * @return decimal value as a string
+ */
 public static String convertHexToDecimal(String hexNumber)
 {
     String decimalNumber = "";
@@ -90,6 +121,13 @@ public static String convertHexToDecimal(String hexNumber)
     }
     return String.valueOf(decimalResult);
 }
+/**
+ * Converts hex to binary.
+ * Works by first converting hex to decimal, then decimal to binary.
+ *
+ * @param hexNumber the hex string to convert
+ * @return binary representation as a string
+ */
 public static String convertHexToBinary(String hexNumber)
 {
 

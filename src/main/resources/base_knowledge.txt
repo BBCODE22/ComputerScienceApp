@@ -15,3 +15,589 @@ You should teach the conversion between number systems using multiple methods �
 as positional notation and two’s complement — to minimise learners’ reliance on conversion
 tables.
 Boolean logic. As with number systems, you should ensure that you teach Boolean logic beyond theoretical knowledge. Introduce practical examples within programming and link the Boolean logic to selection and iteration principles to demonstrate practical, real-world applications.
+
+
+Other:
+================================================================================
+HNC COMPUTING KNOWLEDGEBASE — NETWORKING, JAVA/JAVAFX, CLOUD/AZURE
+================================================================================
+Last updated: 2026 | Author: HNC Computing Reference
+================================================================================
+
+================================================================================
+SECTION 1: NETWORKING
+================================================================================
+
+--- OSI MODEL ---
+Layer 7 - Application:    End-user protocols. HTTP, HTTPS, FTP, SMTP, DNS, DHCP.
+Layer 6 - Presentation:   Data formatting, encryption, compression. SSL/TLS, JPEG, ASCII.
+Layer 5 - Session:        Session management, authentication. NetBIOS, RPC.
+Layer 4 - Transport:      End-to-end delivery, error recovery. TCP (reliable), UDP (fast/unreliable).
+Layer 3 - Network:        Logical addressing, routing. IP, ICMP, ARP. Routers operate here.
+Layer 2 - Data Link:      Physical addressing (MAC), framing, error detection. Switches, bridges.
+Layer 1 - Physical:       Raw bits, cables, voltages, frequencies. Hubs, repeaters.
+
+Mnemonic (top-down): All People Seem To Need Data Processing
+Mnemonic (bottom-up): Please Do Not Throw Sausage Pizza Away
+
+--- TCP vs UDP ---
+TCP: Connection-oriented. 3-way handshake (SYN, SYN-ACK, ACK). Reliable, ordered, error-checked.
+     Used by: HTTP, HTTPS, FTP, SMTP, SSH.
+UDP: Connectionless. No handshake. Fast, low overhead, no guaranteed delivery.
+     Used by: DNS, DHCP, VoIP, video streaming, online gaming.
+
+--- IP ADDRESSING ---
+IPv4: 32-bit address. Written as 4 octets (e.g. 192.168.1.1). ~4.3 billion addresses.
+IPv6: 128-bit address. Written as 8 groups of hex (e.g. 2001:0db8:85a3::8a2e:0370:7334). Vastly more addresses.
+
+Private IPv4 ranges (not routable on internet):
+  Class A: 10.0.0.0 – 10.255.255.255       (/8)
+  Class B: 172.16.0.0 – 172.31.255.255     (/12)
+  Class C: 192.168.0.0 – 192.168.255.255   (/16)
+
+Loopback: 127.0.0.1 (localhost) — used to test local network stack.
+APIPA:    169.254.0.0/16 — auto-assigned when DHCP fails.
+
+--- SUBNETTING ---
+Subnet mask defines which bits are the network portion vs host portion.
+CIDR notation: /24 means 24 bits for network, 8 bits for hosts.
+
+Common subnets:
+  /8  = 255.0.0.0       = 16,777,214 hosts
+  /16 = 255.255.0.0     = 65,534 hosts
+  /24 = 255.255.255.0   = 254 hosts
+  /25 = 255.255.255.128 = 126 hosts
+  /26 = 255.255.255.192 = 62 hosts
+  /27 = 255.255.255.224 = 30 hosts
+  /28 = 255.255.255.240 = 14 hosts
+  /30 = 255.255.255.252 = 2 hosts (point-to-point links)
+
+Usable hosts = 2^(host bits) - 2 (subtract network and broadcast addresses).
+Network address: all host bits = 0. Broadcast address: all host bits = 1.
+
+Example: 192.168.1.0/26
+  Subnet mask: 255.255.255.192
+  Network:     192.168.1.0
+  Broadcast:   192.168.1.63
+  Usable:      192.168.1.1 – 192.168.1.62 (62 hosts)
+
+--- DHCP ---
+Dynamic Host Configuration Protocol. Automatically assigns IP, subnet mask, default gateway, DNS.
+Process (DORA):
+  D - Discover:  Client broadcasts to find DHCP server.
+  O - Offer:     Server offers an IP address.
+  R - Request:   Client requests the offered IP.
+  A - Acknowledge: Server confirms the lease.
+
+DHCP lease: temporary assignment of an IP address for a defined time period.
+DHCP reservation: binds a specific IP to a device's MAC address (static via DHCP).
+
+--- DNS ---
+Domain Name System. Translates domain names to IP addresses (and vice versa).
+Hierarchy: Root (.) → TLD (.com, .uk) → Domain (google.com) → Subdomain (mail.google.com)
+
+Record types:
+  A     — Maps hostname to IPv4 address.
+  AAAA  — Maps hostname to IPv6 address.
+  CNAME — Alias from one hostname to another.
+  MX    — Mail exchange server for a domain.
+  PTR   — Reverse DNS (IP to hostname).
+  NS    — Nameserver for a domain.
+  TXT   — Text records (used for SPF, DKIM, verification).
+
+DNS resolution: Recursive resolver → Root nameserver → TLD nameserver → Authoritative nameserver.
+DNS uses UDP port 53 (TCP for large responses/zone transfers).
+
+--- COMMON PORTS ---
+20/21  - FTP (data/control)
+22     - SSH
+23     - Telnet (insecure, avoid)
+25     - SMTP (email sending)
+53     - DNS
+67/68  - DHCP (server/client)
+80     - HTTP
+110    - POP3
+143    - IMAP
+443    - HTTPS
+3389   - RDP (Remote Desktop Protocol)
+3306   - MySQL
+5432   - PostgreSQL
+
+--- NETWORK DEVICES ---
+Hub:        Layer 1. Broadcasts all traffic to all ports. Dumb device.
+Switch:     Layer 2. Uses MAC address table to forward frames to correct port only.
+Router:     Layer 3. Routes packets between networks using IP addresses. Connects LAN to WAN.
+Access Point: Wireless connection point. Bridges wireless to wired network.
+Firewall:   Filters traffic based on rules. Can be hardware or software.
+NAT:        Network Address Translation. Translates private IPs to public IP for internet access.
+
+--- WIRELESS NETWORKING ---
+Standards (IEEE 802.11):
+  802.11a  — 5GHz, up to 54 Mbps.
+  802.11b  — 2.4GHz, up to 11 Mbps.
+  802.11g  — 2.4GHz, up to 54 Mbps.
+  802.11n  — 2.4/5GHz, up to 600 Mbps. (Wi-Fi 4)
+  802.11ac — 5GHz, up to 3.5 Gbps. (Wi-Fi 5)
+  802.11ax — 2.4/5/6GHz, up to 9.6 Gbps. (Wi-Fi 6)
+
+Security standards:
+  WEP:  Wired Equivalent Privacy. Outdated, easily cracked. Avoid.
+  WPA:  Wi-Fi Protected Access. Improved but still vulnerable.
+  WPA2: Uses AES encryption. Current standard. Strong.
+  WPA3: Latest. Enhanced protection, better for public networks.
+
+SSID: Service Set Identifier. The name of a wireless network.
+2.4GHz: Longer range, more interference, slower speeds.
+5GHz:   Shorter range, less interference, faster speeds.
+
+--- CABLE STANDARDS ---
+Twisted Pair:
+  Cat5:   Up to 100 Mbps, 100m.
+  Cat5e:  Up to 1 Gbps, 100m. Most common for older installs.
+  Cat6:   Up to 10 Gbps (55m), 1 Gbps at 100m. Reduced crosstalk.
+  Cat6a:  Up to 10 Gbps at 100m. Better shielding.
+  Cat7:   Up to 10 Gbps, fully shielded. Less common.
+
+Fibre Optic:
+  Single-mode: Long distance, single light path, yellow cable. Used in WANs.
+  Multi-mode:  Shorter distance, multiple light paths, orange/aqua cable. Used in LANs.
+
+Connectors:
+  RJ45: Standard twisted pair Ethernet connector.
+  RJ11: Telephone connector (smaller than RJ45).
+  LC/SC/ST: Fibre optic connectors.
+
+Straight-through cable: Connects different device types (PC to switch, switch to router).
+Crossover cable:        Connects same device types (PC to PC, switch to switch). Less needed now due to Auto-MDIX.
+
+--- NETWORK TOPOLOGIES ---
+Bus:    All devices on one cable. Single point of failure. Simple but outdated.
+Star:   All devices connect to central switch/hub. Most common. Easy to manage.
+Ring:   Devices in a circle. Token passing. Failure of one device can break ring.
+Mesh:   Every device connects to every other. Redundant but expensive. Used in WANs.
+Hybrid: Combination of topologies.
+
+--- NETWORK TYPES ---
+LAN: Local Area Network. Single building or campus.
+WAN: Wide Area Network. Spans large geographic areas (e.g. the internet).
+MAN: Metropolitan Area Network. City-wide.
+PAN: Personal Area Network. Short range (Bluetooth).
+VLAN: Virtual LAN. Logical segmentation of a physical network. Configured on managed switches.
+
+--- PROTOCOLS SUMMARY ---
+HTTP/HTTPS: Web traffic. HTTPS uses TLS for encryption.
+FTP/SFTP:   File transfer. SFTP uses SSH for security.
+SMTP:       Sending email.
+POP3/IMAP:  Receiving email. IMAP syncs across devices; POP3 downloads and deletes from server.
+SSH:        Secure remote command line access. Replaces Telnet.
+ICMP:       Used by ping and traceroute. Diagnostic tool.
+ARP:        Resolves IP addresses to MAC addresses on a local network.
+SNMP:       Monitors and manages network devices.
+
+================================================================================
+SECTION 2: JAVA & JAVAFX
+================================================================================
+
+--- JAVA FUNDAMENTALS ---
+Java is object-oriented, platform-independent (compile to bytecode, run on JVM).
+Strong typing: all variables must have a declared type.
+Everything (except primitives) is an object.
+
+Primitive types:
+  int      — 32-bit integer. Range: -2,147,483,648 to 2,147,483,647.
+  long     — 64-bit integer.
+  double   — 64-bit floating point.
+  float    — 32-bit floating point. Suffix with f (e.g. 3.14f).
+  boolean  — true or false.
+  char     — single character. Uses single quotes: 'A'.
+  byte     — 8-bit integer. Range: -128 to 127.
+  short    — 16-bit integer.
+
+Wrapper classes: Integer, Long, Double, Float, Boolean, Character, Byte, Short.
+Autoboxing: automatic conversion between primitives and wrapper classes.
+
+--- OOP PRINCIPLES ---
+Encapsulation:  Hiding internal state. Use private fields with public getters/setters.
+Inheritance:    A subclass extends a superclass. Uses 'extends' keyword. 
+                Java supports single inheritance only (one superclass).
+Polymorphism:   Same method name behaves differently depending on object type.
+                Overriding (runtime) vs Overloading (compile-time).
+Abstraction:    Hiding complex implementation. Use abstract classes or interfaces.
+
+--- CLASSES & OBJECTS ---
+Constructor: Special method called when object is created. Same name as class, no return type.
+'this':      Refers to current instance.
+'super':     Refers to parent class.
+'static':    Belongs to class, not instance. Shared across all objects.
+'final':     Variable = constant. Method = cannot override. Class = cannot extend.
+
+Abstract class: Cannot be instantiated. Can have abstract (unimplemented) and concrete methods.
+Interface:      All methods abstract by default (Java 7). Can have default/static methods (Java 8+).
+               A class can implement multiple interfaces.
+
+--- COLLECTIONS ---
+ArrayList<T>:   Resizable array. Fast random access. Slow insert/delete at middle.
+LinkedList<T>:  Doubly linked. Fast insert/delete. Slow random access.
+HashMap<K,V>:   Key-value pairs. Fast lookup. No guaranteed order.
+LinkedHashMap:  HashMap with insertion-order preserved.
+TreeMap<K,V>:   Sorted by key. Slower than HashMap.
+HashSet<T>:     Unique elements only. No order. Fast lookup.
+Stack<T>:       LIFO (Last In First Out).
+Queue<T>:       FIFO (First In First Out). LinkedList implements Queue.
+
+Common ArrayList methods:
+  add(item), add(index, item), get(index), set(index, item),
+  remove(index), remove(object), size(), contains(item), clear(), isEmpty()
+
+Iterating:
+  for (String s : list) { }              // enhanced for loop
+  list.forEach(s -> System.out.println(s)); // lambda
+
+--- STRINGS ---
+String is immutable in Java. Concatenation creates new objects.
+Use StringBuilder for frequent modifications (mutable, faster).
+
+Common String methods:
+  length(), charAt(i), substring(start, end), indexOf(str),
+  toUpperCase(), toLowerCase(), trim(), strip(), replace(old, new),
+  equals(str), equalsIgnoreCase(str), contains(str), startsWith(str),
+  split(regex), isEmpty(), isBlank(), toCharArray()
+
+String to int:   Integer.parseInt("42")
+int to String:   String.valueOf(42)  or  Integer.toString(42)  or  "" + 42
+char to int:     (int) 'A'  →  65
+int to char:     (char) 65  →  'A'
+
+--- EXCEPTION HANDLING ---
+try {
+    // risky code
+} catch (SpecificException e) {
+    // handle specific error
+} catch (Exception e) {
+    // handle any other error
+} finally {
+    // always runs (cleanup)
+}
+
+throw new IllegalArgumentException("message");  // throw manually
+throws: declare in method signature that it may throw checked exceptions.
+
+Checked exceptions:   Must be caught or declared (e.g. IOException, SQLException).
+Unchecked exceptions: RuntimeExceptions, don't need to be declared (e.g. NullPointerException).
+
+--- FILE I/O ---
+Read file:
+  List<String> lines = Files.readAllLines(Path.of("file.txt"));
+  String content = Files.readString(Path.of("file.txt"));
+
+Write file:
+  Files.writeString(Path.of("file.txt"), "content");
+  Files.write(Path.of("file.txt"), lines);
+
+--- JAVAFX OVERVIEW ---
+JavaFX is the modern Java GUI framework. Replaced Swing.
+Requires JavaFX SDK (added via Maven or module-path).
+FXML: XML-based UI layout. Designed in Scene Builder. Loaded by FXMLLoader.
+Controller: Java class that handles UI logic. Linked to FXML via fx:controller attribute.
+
+Project structure (Maven):
+  src/main/java/       — Java source files (controllers, models)
+  src/main/resources/  — FXML files, CSS, images
+  pom.xml              — Maven dependencies and plugins
+
+--- JAVAFX APPLICATION LIFECYCLE ---
+1. main() calls Application.launch()
+2. JavaFX starts, calls init() (optional setup)
+3. Calls start(Stage primaryStage) — main entry point
+4. Build scene graph, set on stage, show stage
+5. Application runs until window is closed
+6. Calls stop() (optional cleanup)
+
+--- FXML & CONTROLLERS ---
+FXML file declares UI structure. Controller handles events.
+
+Linking controller in FXML:
+  <AnchorPane fx:controller="com.example.MyController">
+
+Injecting UI elements into controller:
+  @FXML
+  private Button myButton;
+  @FXML
+  private TextField myTextField;
+  @FXML
+  private TextArea myTextArea;
+  @FXML
+  private Label myLabel;
+
+initialize() method:
+  Automatically called after FXML is loaded. Use for setup (adding listeners, defaults).
+  @FXML
+  public void initialize() { ... }
+
+Event handler in FXML:
+  <Button onAction="#handleButtonClick" />
+  
+  In controller:
+  @FXML
+  private void handleButtonClick() { ... }
+
+Loading FXML:
+  FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/MyScreen.fxml"));
+  Parent root = loader.load();
+
+--- JAVAFX COMMON CONTROLS ---
+Label:       Display text. label.setText("Hello");
+Button:      Clickable button. button.setOnAction(e -> handleClick());
+TextField:   Single-line text input. tf.getText(), tf.setText("value");
+TextArea:    Multi-line text. ta.setWrapText(true), ta.setEditable(false);
+ComboBox:    Dropdown. cb.getItems().addAll("A","B"); cb.getValue();
+CheckBox:    Boolean toggle. cb.isSelected();
+RadioButton: Single selection from group. Use ToggleGroup.
+Slider:      Numeric range input. slider.getValue();
+ProgressBar: Visual progress. pb.setProgress(0.75);
+ListView:    Scrollable list. lv.getItems().addAll(...);
+TableView:   Grid of data with columns.
+TabPane:     Multiple tabs. Each tab contains a Node.
+
+--- JAVAFX LAYOUT CONTAINERS ---
+AnchorPane:  Pins children to edges. Most flexible for absolute positioning.
+VBox:        Stacks children vertically. vbox.setSpacing(10);
+HBox:        Stacks children horizontally.
+BorderPane:  Top, Bottom, Left, Right, Center regions.
+GridPane:    Row/column grid. GridPane.setRowIndex(node, 0);
+StackPane:   Layers children on top of each other.
+FlowPane:    Wraps children like word wrap.
+SplitPane:   Resizable panes split by a divider.
+ScrollPane:  Adds scrollbars to content.
+
+AnchorPane constraints (in FXML):
+  AnchorPane.topAnchor, AnchorPane.bottomAnchor, AnchorPane.leftAnchor, AnchorPane.rightAnchor
+  Set to 0.0 to stretch a child to fill the pane.
+
+--- JAVAFX THREADING ---
+JavaFX UI must ONLY be updated from the JavaFX Application Thread.
+Never run long tasks (API calls, file I/O) on the UI thread — it freezes the app.
+
+Background task pattern:
+  Task<String> task = new Task<>() {
+      @Override
+      protected String call() throws Exception {
+          return performLongOperation();  // runs on background thread
+      }
+  };
+  task.setOnSucceeded(e -> label.setText(task.getValue())); // back on UI thread
+  task.setOnFailed(e -> label.setText("Error: " + task.getException().getMessage()));
+  
+  Thread thread = new Thread(task);
+  thread.setDaemon(true);
+  thread.start();
+
+Platform.runLater(() -> { ... }): schedules code to run on UI thread from background thread.
+
+--- JAVAFX CSS ---
+JavaFX uses a subset of CSS. Apply via scene.getStylesheets().add() or fx:stylesheet in FXML.
+Common properties:
+  -fx-background-color: #1e1e2e;
+  -fx-text-fill: white;
+  -fx-font-size: 14px;
+  -fx-font-family: "Segoe UI";
+  -fx-padding: 10px;
+  -fx-border-radius: 8px;
+  -fx-background-radius: 8px;
+  -fx-cursor: hand;
+
+Style classes: .button, .label, .text-field, .text-area, .tab-pane, .tab
+Pseudo-classes: .button:hover, .button:pressed, .check-box:selected
+
+Tab pane full-width tabs:
+  .tab { -fx-pref-width: 10000px; }
+  
+Hide tab overflow button:
+  .tab-pane > .tab-header-area > .control-buttons-tab { 
+      -fx-min-width: 0; -fx-pref-width: 0; -fx-max-width: 0; 
+  }
+
+--- TEXTFORMATTER (INPUT VALIDATION) ---
+Limit TextField to single character:
+  tf.setTextFormatter(new TextFormatter<>(change -> 
+      change.getControlNewText().length() <= 1 ? change : null));
+
+Allow only digits:
+  tf.setTextFormatter(new TextFormatter<>(change ->
+      change.getText().matches("[0-9]*") ? change : null));
+
+--- SCENE BUILDER TIPS ---
+- Use Hierarchy panel to navigate nested elements.
+- Set fx:id in Properties panel to link to controller field.
+- Set onAction in Code panel to link event handlers.
+- AnchorPane constraints set in Layout panel.
+- Preview with Ctrl+Shift+P.
+- Common bug: FXML and controller field name mismatch causes NullPointerException.
+
+--- MAVEN (pom.xml) ---
+Add dependency:
+  <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>21.0.2</version>
+  </dependency>
+
+JavaFX modules required: javafx-controls, javafx-fxml (minimum).
+module-info.java: must require and open modules for FXML to work.
+
+  module com.example.app {
+      requires javafx.controls;
+      requires javafx.fxml;
+      opens com.example.controllers to javafx.fxml;
+      exports com.example;
+  }
+
+Ikonli (icon library): requires both pom.xml dependency AND module-info.java entry.
+  requires org.kordamp.ikonli.javafx;
+  requires org.kordamp.ikonli.fontawesome5;
+
+--- INTELLIJ TIPS ---
+Invalidate Caches: File → Invalidate Caches → Restart. Fixes most project recognition issues.
+Reload from Disk: Right-click project root → Reload from Disk.
+Maven refresh: Maven panel → Reload All Maven Projects button.
+Run configuration: Edit Configurations → ensure VM options include JavaFX module path if needed.
+OneDrive sync: Right-click project folder in Explorer → Always keep on this device.
+
+================================================================================
+SECTION 3: CLOUD COMPUTING & AZURE
+================================================================================
+
+--- NIST CLOUD DEFINITION ---
+The NIST defines cloud computing by 5 essential characteristics:
+1. On-demand self-service:    User can provision resources without human interaction with the provider.
+2. Broad network access:      Resources accessible over the network from various devices.
+3. Resource pooling:          Provider serves multiple customers (multi-tenancy) using shared resources.
+4. Rapid elasticity:          Resources can scale up/down quickly, often automatically.
+5. Measured service:          Usage is monitored, controlled, and reported (pay-as-you-go).
+
+--- SERVICE MODELS ---
+IaaS (Infrastructure as a Service):
+  Provider manages: physical hardware, networking, virtualisation.
+  You manage: OS, runtime, middleware, applications, data.
+  Examples: Azure VMs, AWS EC2, Google Compute Engine.
+  Use when: Need full control over the OS and environment.
+
+PaaS (Platform as a Service):
+  Provider manages: hardware, OS, runtime, middleware.
+  You manage: applications and data only.
+  Examples: Azure App Service, Heroku, Google App Engine.
+  Use when: Focus on app development, not infrastructure.
+
+SaaS (Software as a Service):
+  Provider manages everything.
+  You manage: just your data and user accounts.
+  Examples: Microsoft 365, Gmail, Salesforce, Dropbox.
+  Use when: Need software, no development required.
+
+FaaS (Function as a Service) / Serverless:
+  Run individual functions in response to events. No server management.
+  Examples: Azure Functions, AWS Lambda.
+
+--- DEPLOYMENT MODELS ---
+Public Cloud:   Resources on provider's infrastructure, shared with other customers. (Azure, AWS, GCP)
+Private Cloud:  Dedicated infrastructure for one organisation. On-premises or hosted.
+Hybrid Cloud:   Mix of public and private. Data/apps can move between them.
+Community Cloud: Shared by organisations with common concerns (e.g. government agencies).
+
+--- AZURE FUNDAMENTALS ---
+Azure is Microsoft's cloud platform. Accessed via portal.azure.com.
+
+Key concepts:
+  Subscription:       Billing container. All resources belong to a subscription.
+  Resource Group:     Logical container for related resources. Resources in same group share lifecycle.
+  Resource:           Any manageable item (VM, storage account, database, VNet etc.).
+  Region:             Geographic location of data centre (e.g. UK South, West Europe).
+  Availability Zone:  Physically separate locations within a region. Provides redundancy.
+
+--- AZURE VIRTUAL MACHINES ---
+IaaS service. Full control over OS.
+Steps to create: Portal → Create Resource → Virtual Machine → Configure size, OS, region, credentials.
+Connecting: RDP (Remote Desktop Protocol) on port 3389 for Windows VMs.
+             SSH on port 22 for Linux VMs.
+
+VM sizes: B-series (burstable, cheap), D-series (general purpose), F-series (compute optimised).
+Student subscriptions may restrict certain VM sizes or regions.
+
+--- AZURE NETWORKING ---
+Virtual Network (VNet): Isolated network in Azure. Similar to a LAN in the cloud.
+Subnet: Subdivision of a VNet. Resources placed in subnets.
+Network Interface (NIC): Connects a VM to a subnet.
+Public IP: Exposes a resource to the internet.
+Private IP: Internal Azure address. Not accessible from internet.
+
+Network Security Group (NSG): 
+  Acts as a firewall. Contains inbound and outbound security rules.
+  Each rule has: Priority, Port, Protocol, Source, Destination, Action (Allow/Deny).
+  Lower priority number = higher precedence.
+  Applied to subnet or NIC level.
+  Default rules block most inbound traffic. Must add rules to allow RDP, SSH, HTTP etc.
+
+--- AZURE STORAGE ---
+Blob Storage:   Unstructured data (files, images, backups). Cheap. 3 tiers: Hot, Cool, Archive.
+File Storage:   Managed file shares (SMB protocol). Mount like a network drive.
+Queue Storage:  Message queuing between applications.
+Table Storage:  NoSQL key-value store.
+
+Storage account types: LRS (local redundant), GRS (geo-redundant), ZRS (zone redundant).
+
+--- AZURE IDENTITY ---
+Azure Active Directory (Azure AD / Entra ID): Cloud identity service.
+  Users, Groups, Roles, App registrations.
+RBAC (Role-Based Access Control): Assign roles to users/groups to control access to resources.
+  Common roles: Owner, Contributor, Reader.
+MFA (Multi-Factor Authentication): Additional security layer beyond password.
+
+--- AZURE DEVOPS & GITHUB ---
+Azure DevOps: Suite including Boards (tasks), Repos (Git), Pipelines (CI/CD), Artifacts.
+GitHub:       Source control and collaboration. GitHub Actions for CI/CD.
+GitHub Codespaces: Cloud-based development environment. devcontainer.json configures the environment.
+
+devcontainer.json key fields:
+  "image":            Base Docker image.
+  "forwardPorts":     Ports to expose from container.
+  "postCreateCommand": Command to run after container created (e.g. install deps).
+  "extensions":       VS Code extensions to install automatically.
+
+--- CLOUD IDE: GITHUB CODESPACES ---
+Browser-based VS Code connected to a cloud container.
+Benefits: No local setup, consistent environment, accessible anywhere.
+devcontainer.json stored in .devcontainer/ folder.
+Supports port forwarding for web apps running inside container.
+Free tier available for GitHub users (limited hours per month).
+
+--- SCALING & AVAILABILITY ---
+Vertical scaling (scale up):   Add more CPU/RAM to existing resource. Has limits.
+Horizontal scaling (scale out): Add more instances. More flexible, supports load balancing.
+Auto-scaling:                   Automatically adjust instance count based on load metrics.
+
+Load balancer:  Distributes traffic across multiple instances.
+CDN:            Content Delivery Network. Caches content closer to users geographically.
+SLA:            Service Level Agreement. Azure guarantees uptime % (e.g. 99.9% = ~8.7 hrs downtime/yr).
+
+--- CLOUD COST MODEL ---
+CapEx (Capital Expenditure): Upfront investment in hardware. Traditional on-premises model.
+OpEx (Operating Expenditure): Pay-as-you-go ongoing costs. Cloud model.
+
+Cloud pricing factors: compute time, storage used, data transfer (egress), number of operations.
+Cost optimisation: right-size VMs, use reserved instances, delete unused resources, use cool/archive storage tiers.
+
+--- SECURITY IN THE CLOUD ---
+Shared Responsibility Model:
+  Provider is always responsible for: physical security, hardware, network infrastructure.
+  Customer is always responsible for: data, access management, client-side encryption.
+  Shared: depends on service model (IaaS you manage more than SaaS).
+
+Principle of Least Privilege: Grant only the minimum permissions needed.
+Defence in Depth: Multiple layers of security (network, identity, application, data).
+Encryption at rest: Data encrypted when stored.
+Encryption in transit: Data encrypted over the network (TLS/HTTPS).
+Zero Trust: Never trust, always verify. Treat all access as potentially hostile.
+
+================================================================================
+END OF KNOWLEDGEBASE
+================================================================================

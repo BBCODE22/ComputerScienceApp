@@ -19,15 +19,19 @@ public class AIChatController {
 
     private AIGemini ai;
 
-
-    public void initialize()
-    {
+/**
+* Sets up the AI instance and configures the answer area when the screen loads.
+*/
+{
         ai = new AIGemini();
         answerTextArea.setWrapText(true);
         answerTextArea.setEditable(false);
     }
-    public void handleAskQuestion()
-    {
+/**
+* Takes the question from the text field, sends it to the AI, and displays the response.
+*/
+public void handleAskQuestion()
+{
         String question = questionTextField.getText();
         String answer = ai.askQuestion(question);
         answerTextArea.setText(answer);

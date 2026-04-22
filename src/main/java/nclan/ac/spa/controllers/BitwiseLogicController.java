@@ -54,6 +54,10 @@ numberBaseComboBox.getItems().add("Binary");
 numberBaseComboBox.getItems().add("Hexadecimal");
 
 }
+/**
+ * Handles the bitwise operation (AND, OR, XOR) on the two binary inputs and displays the result.
+ * Validates that the inputs only contain 0s and 1s.
+ */
 public void handleBitwise() {
     String operation = operationComboBox.getValue();
     String inputOne = firstTextField.getText();
@@ -95,6 +99,10 @@ public void handleBitwise() {
 
 
 }
+/**
+ * Handles add and sub for binary or hex inputs depending on what's selected.
+ * Validates input before the calculation.
+ */
 public void handleMath()
 {
     String comboValue = numberBaseComboBox.getValue();
@@ -162,6 +170,9 @@ public void handleMath()
     }
 
 }
+/**
+ * Handles the add toggle button selects add and deselects minus, updating the label.
+ */
 public void handleToggle()
 {
     if (addSelectButton.isSelected())
@@ -175,6 +186,9 @@ public void handleToggle()
     }
 
 }
+/**
+ * Handles the minus toggle button elects minus and deselects add, updating the label.
+ */
 public void handleMinusToggle()
 {
     if (minusSelectButton.isSelected())

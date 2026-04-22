@@ -27,6 +27,7 @@ ComboBox<String> fromCombo;
 ComboBox<String> toCombo;
 
 @FXML
+
 public void initialize()
 {
     fromCombo.getItems().add("Binary");
@@ -52,6 +53,11 @@ public void initialize()
         }
     });
 }
+/**
+ * Reads the user's input and selected number bases, then performs the
+ * appropriate conversion and displays the result. Validates input format
+ * before converting.
+ */
 public void handleConvert(){
     String from = fromCombo.getValue();
     String to = toCombo.getValue();

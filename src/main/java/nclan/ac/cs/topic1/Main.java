@@ -10,19 +10,19 @@ public class Main {
     runASCII();
 }
 
-private static void runBitwiseLogic()
-{
+    private static void runBitwiseLogic()
+    {
 
 
-    try
-    {
-        String result = BitwiseLogic.binarySub("101101", "1111111");
-        System.out.println("Binary sub Result: " + result);
-    }
-    catch(Exception e)
-    {
-        System.err.println("Binary sub failed! " +  e.getMessage());
-    }
+        try
+        {
+            String result = BitwiseLogic.binarySub("101101", "1111111");
+            System.out.println("Binary sub Result: " + result);
+        }
+        catch(Exception e)
+        {
+            System.err.println("Binary sub failed! " +  e.getMessage());
+        }
 
 
 
@@ -114,6 +114,7 @@ public static void showError(String message)
 {
     new Alert (Alert.AlertType.ERROR, message).showAndWait();
 }
+
 
 }
 

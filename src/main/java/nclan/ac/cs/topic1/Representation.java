@@ -2,11 +2,26 @@ package nclan.ac.cs.topic1;
 
 public class Representation {
 
-
-    public static int charToASCII(char singleChar) {
+/**
+ * Returns the ASCII decimal value of a single character.
+ *
+ * @param singleChar the character to convert
+ * @return the ASCII decimal value
+ */
+public static int charToASCII(char singleChar)
+    {
         return singleChar;
     }
-    public static String stringToASCII(String manyChars) {
+
+/**
+ * Converts each character in a string to its ASCII decimal value,
+ * returning them as a string.
+ *
+ * @param manyChars the string to convert
+ * @return separated ASCII decimal values
+ */
+public static String stringToASCII(String manyChars)
+{
         char[] arrayChars = manyChars.toCharArray();
 
         StringBuilder returnValues = new StringBuilder();
@@ -19,7 +34,16 @@ public class Representation {
         result = result.strip();
         return result;
     }
-    public static String stringToHex(String manyChars) {
+
+/**
+ * Converts each character in a string to its hex equivalent,
+ * returning them as a space-separated string.
+ *
+ * @param manyChars the string to convert
+ * @return space-separated hex values
+ */
+public static String stringToHex(String manyChars)
+{
         char[] arrayChars = manyChars.toCharArray();
         String returnValues = "";
 
@@ -32,11 +56,27 @@ public class Representation {
         }
         return returnValues.trim();
     }
-    public static char decimalToChar(int value) {
+
+/**
+ * Converts a decimal integer to its matching character.
+ *
+ * @param value the decimal ASCII value
+ * @return the matching character
+ */
+public static char decimalToChar(int value)
+{
         char result = (char) value;
         return result;
     }
-    public static String decimalsToString(String intString) {
+
+/**
+ * Converts a string of decimal ASCII values back into a readable string.
+ *
+ * @param intString space separated decimal values
+ * @return the reconstructed string
+ */
+public static String decimalsToString(String intString)
+{
         String[] numbers = intString.split(" ");
         StringBuilder result = new StringBuilder();
 
@@ -47,7 +87,15 @@ public class Representation {
 
         return result.toString();
     }
-    public static String hexToString(String hexString) {
+
+/**
+ * Converts a string of hex values back into a readable string.
+ *
+ * @param hexString space separated hex values
+ * @return the reconstructed string
+ */
+public static String hexToString(String hexString)
+{
         String[] hexValues = hexString.split(" ");
         StringBuilder result = new StringBuilder();
 

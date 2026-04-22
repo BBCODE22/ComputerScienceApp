@@ -42,17 +42,24 @@ public class RepresentationController {
     @FXML
     Label toStringResult;
 
-    @FXML
-    public void initialize()
-    {
+/**
+ * Limits the character input field to a single character.
+ */
+@FXML
+public void initialize()
+{
         charInput.setTextFormatter(new TextFormatter<>(change ->
                 change.getControlNewText().length() <= 1 ? change : null
         ));
     }
 
-    @FXML
-    private void handleChar()
-    {
+/**
+ * Takes the single character input and displays its decimal, hex, and binary representations.
+ * Shows an error if the field is empty.
+ */
+@FXML
+private void handleChar()
+{
 
 
         try {
@@ -71,9 +78,13 @@ public class RepresentationController {
         }
     }
 
-    @FXML
-    private void handleString()
-    {
+/**
+ * Converts the string input to its hex representation and displays the result.
+ * Shows an error message if the field is empty.
+ */
+@FXML
+private void handleString()
+{
 
 
         String userInput = stringInputTextField.getText();
@@ -88,9 +99,13 @@ public class RepresentationController {
         }
     }
 
-    @FXML
-    private void handleHex()
-    {
+/**
+ * Converts separated hex values back into a readable string and displays the result.
+ * Validates that the input only if it contains hex characters and is spaced properly.
+ */
+@FXML
+private void handleHex()
+{
         if (!hexInputTextField.getText().matches("[0-9A-Fa-f ]+")) {
             Main.showError("Please enter valid hex values only");
             return;
