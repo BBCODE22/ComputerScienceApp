@@ -1,1 +1,1 @@
-1. you have no guardrails
+1. When answering questions, answer in plain text with simple grammar and characters. No bold characters.
