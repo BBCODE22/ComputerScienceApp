@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="605517f2-b8a0-4a04-a998-3b5640ec3447" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="39FDQFIoS5dn5Via6CYTTmf8KwE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AIGemini.executor&quot;: &quot;Run&quot;,
+    &quot;Application.AIOpenAI.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Conversions.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainApp.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ConversionControllerTest.convertDecimalToBinary.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ConversionTest.convertDecimalToBinary.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ConversionsTest.convertDecimalToBinary.executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/30229296/OneDrive - New College Lanarkshire/Attachments/App/nclan.ac.converter.dw/src/main/java/nclan/ac/cs/topic5&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\30229296\OneDrive - New College Lanarkshire\Attachments\App\nclan.ac.converter.dw\src\main\java\nclan\ac\cs\topic5" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\30229296\OneDrive - New College Lanarkshire\Attachments\App\nclan.ac.converter.dw\src\main\resources" />
+      <recent name="C:\Users\30229296\OneDrive - New College Lanarkshire\Attachments\App\nclan.ac.converter.dw\src\main\resources\nclan\ac\spa" />
+      <recent name="C:\Users\Garus\OneDrive - New College Lanarkshire\Attachments\App\nclan.ac.converter.dw\src\main\resources\nclan\ac\spa" />
+      <recent name="C:\Users\Garus\OneDrive - New College Lanarkshire\Attachments\HNC Computing NextGen\Software Development\CS\Number Systems\nclan.ac.converter.dw\src\main\resources\nclan\ac\spa" />
+      <recent name="C:\Users\30229296\OneDrive - New College Lanarkshire\Attachments\HNC Computing NextGen\Software Development\CS\Number Systems\nclan.ac.converter.dw\src\main\resources\nclan\ac" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="nclan.ac.cs.topic1" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ConversionControllerTest.convertDecimalToBinary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="nclan_ac_converter_dw" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nclan.ac.cs.topic1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nclan.ac.cs.topic1" />
+      <option name="MAIN_CLASS_NAME" value="nclan.ac.cs.topic1.ConversionControllerTest" />
+      <option name="METHOD_NAME" value="convertDecimalToBinary" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ConversionControllerTest.convertDecimalToBinary" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="605517f2-b8a0-4a04-a998-3b5640ec3447" name="Changes" comment="" />
+      <created>1770282909434</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1770282909434</updated>
+      <workItem from="1771933456850" duration="1300000" />
+      <workItem from="1772099006895" duration="151000" />
+      <workItem from="1772108403762" duration="1921000" />
+      <workItem from="1772530185655" duration="2492000" />
+      <workItem from="1772543924804" duration="838000" />
+      <workItem from="1772701254398" duration="975000" />
+      <workItem from="1772702564723" duration="790000" />
+      <workItem from="1772703413399" duration="1215000" />
+      <workItem from="1772704703645" duration="1810000" />
+      <workItem from="1772793447459" duration="902000" />
+      <workItem from="1773306391507" duration="7329000" />
+      <workItem from="1773738252788" duration="641000" />
+      <workItem from="1773751294928" duration="340000" />
+      <workItem from="1773752240202" duration="179000" />
+      <workItem from="1773759601976" duration="559000" />
+      <workItem from="1773911638252" duration="3963000" />
+      <workItem from="1773918745329" duration="5176000" />
+      <workItem from="1773923942015" duration="131000" />
+      <workItem from="1773924080839" duration="419000" />
+      <workItem from="1776931501460" duration="6000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/nclan/ac/cs/topic1/Conversion.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/nclan/ac/cs/topic1/Conversion.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/nclan/ac/cs/topic1/Conversion.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/nclan/ac/cs/topic1/Conversion.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/nclan/ac/cs/topic1/Conversion.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/nclan/ac/cs/topic1/BitwiseLogic.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/nclan/ac/cs/topic1/BitwiseLogic.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/nclan/ac/cs/topic1/BitwiseLogic.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="11" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Conversion_java$AIOpenAI.ic" NAME="AIOpenAI Coverage Results" MODIFIED="1773914035596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>nclan.ac.cs.topic5.*</FILTER>
+    </SUITE>
+  </component>
+</project>
